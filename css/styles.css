@@ -798,11 +798,8 @@ a {
   margin-bottom: 4rem;
 }
 
-.block-features .grid {
-  gap: 4rem 2rem;
-}
-
 .feature {
+  gap: 4rem 2rem;
   margin: 12rem 0;
 }
 
