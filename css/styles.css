@@ -20,6 +20,11 @@
   color: #fff;
 }
 
+/* Images */
+img {
+  width: 100%;
+}
+
 /* Typography */
 
 html {
@@ -213,7 +218,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: none;
-  padding: 2rem 4rem;
+  padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
   transition:
@@ -308,6 +313,7 @@ a {
   border: none;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0;
 }
 
 .input-group .btn {
@@ -357,10 +363,6 @@ a {
   transition: transform 0.2s ease-out;
 }
 
-.plan:hover {
-  transform: scale(1.05);
-}
-
 .plan__name {
   color: #fff;
   margin: 0;
@@ -369,11 +371,11 @@ a {
 }
 
 .plan__price {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .plan__billing-cycle {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 300;
   opacity: 0.8;
   margin-right: 1rem;
@@ -403,17 +405,19 @@ a {
   right: 5%;
 }
 
-@media screen and (min-width: 768px) {
+.plan:hover {
+  transform: scale(1.05);
+}
+
+.plan--popular:hover {
+  transform: scale(1.15);
+}
+
+@media screen and (min-width: 1024px) {
   .plan--popular {
     transform: scale(1.1);
   }
 
-  .plan--popular:hover {
-    transform: scale(1.15);
-  }
-}
-
-@media screen and (min-width: 1024px) {
   .plan__name {
     font-size: 1.4rem;
   }
@@ -468,8 +472,8 @@ a {
 }
 
 .quote__author {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 400;
   font-style: normal;
   margin-bottom: 0;
 }
@@ -477,7 +481,7 @@ a {
 .quote__organization {
   color: var(--color-headings);
   opacity: 0.4;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: normal;
 }
 
@@ -524,13 +528,14 @@ a {
   padding: 3rem;
 }
 
+.testimonial .quote {
+  font-size: 110%;
+  margin: 2rem 0;
+}
+
 .testimonial__image {
   position: relative;
   margin: 0 3rem;
-}
-
-.testimonial__image > img {
-  width: 100%;
 }
 
 .testimonial__image .icon-container {
@@ -546,12 +551,13 @@ a {
 
   .testimonial .quote,
   .testimonial .quote__author {
-    font-size: 2.4rem;
+    font-size: 120%;
   }
 
   .testimonial .quote {
     margin-left: 6rem;
     margin-right: 0;
+    line-height: 1.5;
   }
 }
 
@@ -565,6 +571,10 @@ a {
 .callout--primary {
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.callout--signup {
+  transform: translateY(5rem);
 }
 
 .callout__heading {
@@ -659,8 +669,8 @@ a {
 }
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
-  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+  padding-bottom: calc(var(--padding-vertical) + 3rem);
 }
 
 .block--skewed-left {
@@ -771,6 +781,7 @@ a {
 }
 
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
   grid-template-rows: repeat(2, 6rem);
   grid-template-columns: repeat(3, 1fr);
@@ -778,6 +789,12 @@ a {
   font-size: 2rem;
   font-weight: 600;
   max-width: 700px;
+}
+
+@media screen and (max-width: 358px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -833,10 +850,6 @@ a {
   margin-bottom: 4rem;
 }
 
-.block-showcase__picture > img {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
   .block-showcase .grid {
     grid-template-columns: 50% 50%;
@@ -856,6 +869,7 @@ a {
 
 .footer {
   background-color: #232323;
+  padding-top: 10rem;
 }
 
 .footer a {
@@ -890,7 +904,6 @@ a {
 
 .footer__brand img {
   /* TODO: Consider refactoring this and applying it to all images */
-  width: 100%;
   max-width: 230px;
 }
 
